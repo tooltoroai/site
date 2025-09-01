@@ -1,4 +1,10 @@
 ---
 title: "Start Here"
 ---
-Welcome to **ToolToro** — simple, fast guides to beginner-friendly AI tools.
+
+### Your 7-minute path
+1. **Skim the $0 Starter Stack.**  
+2. **Run one prompt now** (copy-paste from /prompts).  
+3. **Pick one tool** from the /tools page and use it today.
+
+> Some links may be affiliate; we may earn a commission at no extra cost to you.

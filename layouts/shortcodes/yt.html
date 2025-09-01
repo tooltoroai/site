@@ -1,0 +1,5 @@
+<div class="tt-card" style="background:#fff">
+  <strong>{{ .Get "title" }}</strong>
+  <pre style="white-space:pre-wrap;margin:10px 0">{{ .Inner | plainify }}</pre>
+  <button onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText);this.innerText='Copied!';" class="tt-btn" style="padding:8px 12px">Copy prompt</button>
+</div>

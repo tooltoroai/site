@@ -1,0 +1,9 @@
+<div class="tt-card tt-toolcard">
+  {{ with .Get "logo" }}<img src="{{ . }}" alt="logo">{{ end }}
+  <div>
+    <strong>{{ .Get "name" }}</strong><br>
+    <span style="color:var(--tt-ink-70)">{{ .Get "blurb" }}</span><br>
+    <a href="{{ .Get "link" }}" rel="nofollow sponsored">Try {{ .Get "name" }} →</a>
+  </div>
+</div>
+

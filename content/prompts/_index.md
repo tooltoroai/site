@@ -1,4 +1,4 @@
 ---
 title: "Prompts"
+description: "Copy-paste prompts that return clean, structured outputs."
 ---
-Copy-paste prompts you can use today (we'll add the full set tomorrow).

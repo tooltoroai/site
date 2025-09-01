@@ -13,12 +13,18 @@ buildExpired = false
 
 [params]
   defaultTheme = "light"
-  description = "Beginner-friendly AI and automation to save time and grow income."
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
   ShowToc = true
-  TocOpen = false
+  ShowPostNavLinks = true
+  ShowReadingTime = true
+  comments = false
+  images = ["images/og-default.jpg"]
+  description = "Beginner-friendly AI and automation to save time and grow income."
+  env = "production"
+
+[params.homeInfoParams]
+  Title = "Simple AI tools, explained fast."
+  Content = "Ship more in less time—beginner-friendly stacks, prompts, and step-by-steps."
+
 
 [markup.goldmark.renderer]
   unsafe = true
@@ -42,4 +48,24 @@ buildExpired = false
   [[menu.main]]
     name = "Disclosure"
     url = "/disclosure/"
+    weight = 99
+  [[menu.main]] 
+    name = "Start Here" 
+    url = "/start/" 
+    weight = 1
+  [[menu.main]] 
+    name = "Blog" 
+    url = "/blog/" 
+    weight = 2
+  [[menu.main]] 
+    name = "Tools" 
+    url = "/tools/" 
+    weight = 3
+  [[menu.main]] 
+    name = "Prompts" 
+    url = "/prompts/" 
+    weight = 4
+  [[menu.main]] 
+    name = "Disclosure" 
+    url = "/disclosure/" 
     weight = 99

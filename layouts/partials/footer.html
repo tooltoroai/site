@@ -1,0 +1,11 @@
+<footer class="tt-footer">
+  <div class="tt-container">
+    <div>© {{ now.Year }} ToolToro</div>
+    <div style="font-size:14px;margin-top:6px;color:var(--tt-ink-70)">
+      Some links on ToolToro are affiliate links. We may earn a commission at no extra cost to you.
+    </div>
+    <div style="margin-top:6px">
+      <a href="/start/">Start</a> · <a href="/blog/">Blog</a> · <a href="/tools/">Tools</a> · <a href="/prompts/">Prompts</a> · <a href="/disclosure/">Disclosure</a>
+    </div>
+  </div>
+</footer>
