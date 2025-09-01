@@ -1,0 +1,45 @@
+baseURL = "https://www.tooltoro.com/"
+languageCode = "en-us"
+title = "ToolToro — Simple AI tools, explained fast."
+theme = "PaperMod"
+
+[pagination]
+  pagerSize = 10
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[params]
+  defaultTheme = "light"
+  description = "Beginner-friendly AI and automation to save time and grow income."
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowToc = true
+  TocOpen = false
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[menu]
+  [[menu.main]]
+    name = "Start Here"
+    url = "/start/"
+    weight = 1
+  [[menu.main]]
+    name = "Tools"
+    url = "/tools/"
+    weight = 2
+  [[menu.main]]
+    name = "Prompts"
+    url = "/prompts/"
+    weight = 3
+  [[menu.main]]
+    name = "Disclosure"
+    url = "/disclosure/"
+    weight = 99
