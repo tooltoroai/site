@@ -29,7 +29,6 @@ params:
   TocOpen: false
   images:
     - "images/og-default.jpg"
-  # make sure the homepage and /blog list use the blog section
   mainSections:
     - "blog"
 
