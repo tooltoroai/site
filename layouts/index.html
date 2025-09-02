@@ -1,60 +1,32 @@
 {{ define "main" }}
-<section class="tt-hero">
-  <div class="tt-container">
+<main class="wrap">
+  <section class="hero">
     <h1>Simple AI tools, explained fast.</h1>
-    <p>Beginner-friendly stacks, copy-paste prompts, and step-by-step guides to help you ship more in less time.</p>
-    <p>
-      <a class="tt-btn" href="/start/">Start the 7-minute guide</a>
-      <a class="tt-btn tt-btn-outline" href="/blog/" style="margin-left:10px">Browse the blog</a>
-    </p>
-  </div>
-</section>
+    <p class="lede">Beginner-friendly stacks, copy-paste prompts, and step-by-step guides to help you ship more in less time.</p>
+    <p><a class="btn" href="/start/">Start here</a></p>
+  </section>
 
-<div class="tt-container" style="padding-top:28px">
-  <div class="tt-grid cols-3">
-    <div class="tt-card">
-      <span class="tt-chip">$0 Stack</span>
-      <h3>The 7-Tool Beginner Stack</h3>
-      <p>A fast setup to draft, polish, plan, and publish without paying a cent.</p>
-      <p style="margin-top:10px"><a href="/start/">Read the guide →</a></p>
-    </div>
-    <div class="tt-card">
-      <span class="tt-chip">Prompts</span>
-      <h3>Copy-Paste Prompt Library</h3>
-      <p>Prompts that return clean, structured outputs the first time.</p>
-      <p style="margin-top:10px"><a href="/prompts/">Browse prompts →</a></p>
-    </div>
-    <div class="tt-card">
-      <span class="tt-chip">Tools</span>
-      <h3>Tool Directory</h3>
-      <p>Beginner-friendly tools with quick wins. Some links may be affiliate.</p>
-      <p style="margin-top:10px"><a href="/tools/">See tools →</a></p>
-    </div>
-  </div>
-
-  <h2 style="margin:36px 0 12px">Latest posts</h2>
-  <div class="tt-grid cols-3">
-    {{ range first 6 (where .Site.RegularPages "Section" "blog") }}
-      <article class="tt-card">
-        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <p>{{ .Summary | plainify | truncate 120 }}</p>
-        <div style="margin-top:10px">
-          {{ range first 2 .Params.tags }}<span class="tt-chip">{{ . }}</span>{{ end }}
-        </div>
+  <section class="latest">
+    <h2>Latest posts</h2>
+    <div class="post-grid">
+      {{ range first 6 (where .Site.RegularPages "Section" "blog") }}
+      <article class="card">
+        <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <div class="card-meta"><time datetime="{{ .Date }}">{{ .Date.Format "Jan 2, 2006" }}</time></div>
+        <p class="card-summary">
+          {{ with .Params.description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 140 }}{{ end }}
+        </p>
+        {{ with .Params.tags }}
+        <ul class="tags">
+          {{ range first 2 . }}
+            <li><a href="{{ relURL (printf "/tags/%s/" (urlize .)) }}">#{{ . }}</a></li>
+          {{ end }}
+        </ul>
+        {{ end }}
       </article>
-    {{ else }}
-      <p>No posts yet. Your first blog post will appear here.</p>
-    {{ end }}
-  </div>
-
-  <div class="tt-cta" style="margin:28px 0">
-    <strong>Tools we use a lot</strong><br>
-    <a href="[AFFILIATE_CANVA]">Canva</a> •
-    <a href="[AFFILIATE_GRAMMARLY]">Grammarly</a> •
-    <a href="[AFFILIATE_NOTION]">Notion AI</a> •
-    <a href="[AFFILIATE_CLICKUP]">ClickUp</a> •
-    <a href="[AFFILIATE_QUILLBOT]">QuillBot</a>
-    <div style="font-size:13px;color:var(--tt-ink-70);margin-top:6px">Some links may be affiliate; we may earn at no extra cost to you.</div>
-  </div>
-</div>
+      {{ end }}
+    </div>
+    <p class="more"><a class="btn secondary" href="/blog/">Browse all posts</a></p>
+  </section>
+</main>
 {{ end }}

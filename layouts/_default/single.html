@@ -1,22 +1,28 @@
 {{ define "main" }}
-<div class="tt-container">
+<main class="wrap article">
   <article>
-    <header>
+    <header class="article-header">
       <h1>{{ .Title }}</h1>
-      <div style="color:var(--tt-ink-70);font-size:14px">{{ .Date.Format "Jan 2, 2006" }} • {{ .ReadingTime }} min read</div>
+      <div class="article-meta">
+        <time datetime="{{ .Date }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        {{ with .ReadingTime }} · {{ . }} min read{{ end }}
+      </div>
+      {{ with .Params.description }}<p class="lede">{{ . }}</p>{{ end }}
     </header>
-    <div class="post-content" style="margin-top:18px">{{ .Content }}</div>
-    <div class="tt-cta" style="margin:24px 0">
-      <strong>Next steps</strong><br>
-      Try one tool from our <a href="/tools/">Tool Directory</a>, or grab a prompt from <a href="/prompts/">Prompts</a>.
-      <div style="font-size:13px;color:var(--tt-ink-70);margin-top:6px">Some links may be affiliate.</div>
-    </div>
-    <h3>Related</h3>
-    <div class="tt-grid cols-3">
-      {{ range first 3 (where (where .Site.RegularPages "Section" "blog") "Permalink" "ne" .Permalink) }}
-        <article class="tt-card"><h3 style="font-size:18px"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p>{{ .Summary | plainify | truncate 110 }}</p></article>
-      {{ end }}
-    </div>
+
+    <section class="article-body">
+      {{ .Content }}
+    </section>
+
+    {{ with .Params.tags }}
+    <footer class="article-footer">
+      <ul class="tags">
+        {{ range . }}
+          <li><a href="{{ relURL (printf "/tags/%s/" (urlize .)) }}">#{{ . }}</a></li>
+        {{ end }}
+      </ul>
+    </footer>
+    {{ end }}
   </article>
-</div>
+</main>
 {{ end }}
