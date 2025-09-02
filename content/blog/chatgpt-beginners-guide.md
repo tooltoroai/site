@@ -1,6 +1,7 @@
 ---
 title: "ChatGPT Beginner’s Guide — How to Get Started Fast"
-date: 2025-09-02
+date: 2025-09-02T09:00:00
+draft: false
 ---
 
 ## What is ChatGPT?
