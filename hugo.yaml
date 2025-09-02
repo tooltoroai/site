@@ -27,6 +27,7 @@ params:
   ShowToc: true
   TocOpen: false
   images: ["images/og-default.jpg"]
+  mainSections = ["blog"]
 
 menu:
   main:
