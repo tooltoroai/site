@@ -1,4 +1,4 @@
 ---
 title: "Blog"
-description: "Beginner-friendly AI workflows, $0 stacks, and step-by-steps."
+description: "Beginner-friendly AI tools, prompts, and workflows."
 ---
