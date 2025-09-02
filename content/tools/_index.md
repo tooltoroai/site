@@ -2,7 +2,6 @@
 title: "Tools"
 description: "Tools we actually use. Some links may be affiliate."
 ---
-
 Below are tools we mention. Some links may be affiliate.
 
 {{< toolcard name="Canva" blurb="Slides & short video fast" link="[AFFILIATE_CANVA]" logo="/images/tools/canva.png" >}}

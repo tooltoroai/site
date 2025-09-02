@@ -39,9 +39,7 @@
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         <p>{{ .Summary | plainify | truncate 120 }}</p>
         <div style="margin-top:10px">
-          {{ range first 2 .Params.tags }}
-            <span class="tt-chip">{{ . }}</span>
-          {{ end }}
+          {{ range first 2 .Params.tags }}<span class="tt-chip">{{ . }}</span>{{ end }}
         </div>
       </article>
     {{ else }}

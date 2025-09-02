@@ -1,18 +1,15 @@
 baseURL: "https://www.tooltoro.com/"
 languageCode: "en-us"
 title: "ToolToro — Simple AI tools, explained fast."
-theme: "PaperMod"
-
-pagination:
-  pagerSize: 10
+# no theme: we ship our own layouts
+pagination: { pagerSize: 10 }
 
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-outputs:
-  home: ["HTML", "RSS"]
+outputs: { home: ["HTML","RSS"] }
 
 markup:
   goldmark:
@@ -29,24 +26,11 @@ params:
   ShowToc: true
   TocOpen: false
   images: ["images/og-default.jpg"]
-  homeInfoParams:
-    Title: "Simple AI tools, explained fast."
-    Content: "Beginner-friendly stacks, copy-paste prompts, and step-by-step guides to help you ship more in less time."
 
 menu:
   main:
-    - name: "Start Here"
-      url: "/start/"
-      weight: 1
-    - name: "Blog"
-      url: "/blog/"
-      weight: 2
-    - name: "Tools"
-      url: "/tools/"
-      weight: 3
-    - name: "Prompts"
-      url: "/prompts/"
-      weight: 4
-    - name: "Disclosure"
-      url: "/disclosure/"
-      weight: 99
+    - { name: "Start Here", url: "/start/",     weight: 1 }
+    - { name: "Blog",       url: "/blog/",      weight: 2 }
+    - { name: "Tools",      url: "/tools/",     weight: 3 }
+    - { name: "Prompts",    url: "/prompts/",   weight: 4 }
+    - { name: "Disclosure", url: "/disclosure/",weight: 99 }

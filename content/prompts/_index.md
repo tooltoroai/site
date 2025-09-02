@@ -2,7 +2,6 @@
 title: "Prompts"
 description: "Copy-paste prompts that return clean, structured outputs."
 ---
-
 ## Writing: One-minute video script
 {{< prompt title="Short video script" >}}
 Write a 160–180 word, punchy second-person script on **[topic]**.

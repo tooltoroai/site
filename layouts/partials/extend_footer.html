@@ -1,3 +1,2 @@
-<!-- Site JS -->
 {{ $js := resources.Get "js/tt.js" | resources.Fingerprint }}
 <script defer src="{{ $js.RelPermalink }}"></script>
