@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "ToolToro — Simple AI tools, explained fast."
 theme = "PaperMod"
 
+# New Hugo pagination config (replaces deprecated `paginate`)
 [pagination]
   pagerSize = 10
 
@@ -11,61 +12,30 @@ buildDrafts = false
 buildFuture = false
 buildExpired = false
 
-[params]
-  defaultTheme = "light"
-  ShowToc = true
-  ShowPostNavLinks = true
-  ShowReadingTime = true
-  comments = false
-  images = ["images/og-default.jpg"]
-  description = "Beginner-friendly AI and automation to save time and grow income."
-  env = "production"
-
-[params.homeInfoParams]
-  Title = "Simple AI tools, explained fast."
-  Content = "Ship more in less time—beginner-friendly stacks, prompts, and step-by-steps."
-
+[outputs]
+  home = ["HTML", "RSS"]
 
 [markup.goldmark.renderer]
   unsafe = true
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
+[params]
+  env = "production"
+  defaultTheme = "light"
+  description = "Beginner-friendly AI and automation to save time and grow income."
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowToc = true
+  TocOpen = false
+  images = ["images/og-default.jpg"]
+
+[params.homeInfoParams]
+  Title = "Simple AI tools, explained fast."
+  Content = "Beginner-friendly stacks, copy-paste prompts, and step-by-step guides to help you ship more in less time."
 
 [menu]
-  [[menu.main]]
-    name = "Start Here"
-    url = "/start/"
-    weight = 1
-  [[menu.main]]
-    name = "Tools"
-    url = "/tools/"
-    weight = 2
-  [[menu.main]]
-    name = "Prompts"
-    url = "/prompts/"
-    weight = 3
-  [[menu.main]]
-    name = "Disclosure"
-    url = "/disclosure/"
-    weight = 99
-  [[menu.main]] 
-    name = "Start Here" 
-    url = "/start/" 
-    weight = 1
-  [[menu.main]] 
-    name = "Blog" 
-    url = "/blog/" 
-    weight = 2
-  [[menu.main]] 
-    name = "Tools" 
-    url = "/tools/" 
-    weight = 3
-  [[menu.main]] 
-    name = "Prompts" 
-    url = "/prompts/" 
-    weight = 4
-  [[menu.main]] 
-    name = "Disclosure" 
-    url = "/disclosure/" 
-    weight = 99
+  [[menu.main]] name = "Start Here" url = "/start/" weight = 1
+  [[menu.main]] name = "Blog" url = "/blog/" weight = 2
+  [[menu.main]] name = "Tools" url = "/tools/" weight = 3
+  [[menu.main]] name = "Prompts" url = "/prompts/" weight = 4
+  [[menu.main]] name = "Disclosure" url = "/disclosure/" weight = 99

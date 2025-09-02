@@ -1,8 +1,6 @@
-<div class="tt-card tt-toolcard">
-  {{ with .Get "logo" }}<img src="{{ . }}" alt="logo">{{ end }}
-  <div>
-    <strong>{{ .Get "name" }}</strong><br>
-    <span style="color:var(--tt-ink-70)">{{ .Get "blurb" }}</span><br>
-    <a href="{{ .Get "link" }}" rel="nofollow sponsored">Try {{ .Get "name" }} →</a>
-  </div>
+{{ $id := (printf "prompt-%d" (now.UnixNano)) }}
+<div class="tt-card" id="{{ $id }}">
+  <strong>{{ .Get "title" }}</strong>
+  <pre id="{{ $id }}-pre" style="white-space:pre-wrap;margin:10px 0">{{ .Inner | plainify }}</pre>
+  <button class="tt-btn" data-copy-target="#{{ $id }}-pre" style="padding:8px 12px">Copy prompt</button>
 </div>

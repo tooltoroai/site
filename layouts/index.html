@@ -3,7 +3,10 @@
   <div class="tt-container">
     <h1>Simple AI tools, explained fast.</h1>
     <p>Beginner-friendly stacks, copy-paste prompts, and step-by-step guides to help you ship more in less time.</p>
-    <p><a class="tt-btn" href="/start/">Start the 7-minute guide</a></p>
+    <p>
+      <a class="tt-btn" href="/start/">Start the 7-minute guide</a>
+      <a class="tt-btn tt-btn-outline" href="/blog/" style="margin-left:10px">Browse the blog</a>
+    </p>
   </div>
 </section>
 
@@ -13,19 +16,19 @@
       <span class="tt-chip">$0 Stack</span>
       <h3>The 7-Tool Beginner Stack</h3>
       <p>A fast setup to draft, polish, plan, and publish without paying a cent.</p>
-      <a href="/blog/">Read the guide →</a>
+      <p style="margin-top:10px"><a href="/start/">Read the guide →</a></p>
     </div>
     <div class="tt-card">
       <span class="tt-chip">Prompts</span>
       <h3>Copy-Paste Prompt Library</h3>
       <p>Prompts that return clean, structured outputs the first time.</p>
-      <a href="/prompts/">Browse prompts →</a>
+      <p style="margin-top:10px"><a href="/prompts/">Browse prompts →</a></p>
     </div>
     <div class="tt-card">
       <span class="tt-chip">Tools</span>
       <h3>Tool Directory</h3>
       <p>Beginner-friendly tools with quick wins. Some links may be affiliate.</p>
-      <a href="/tools/">See tools →</a>
+      <p style="margin-top:10px"><a href="/tools/">See tools →</a></p>
     </div>
   </div>
 
@@ -36,9 +39,13 @@
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         <p>{{ .Summary | plainify | truncate 120 }}</p>
         <div style="margin-top:10px">
-          {{ range first 2 .Params.tags }}<span class="tt-chip">{{ . }}</span>{{ end }}
+          {{ range first 2 .Params.tags }}
+            <span class="tt-chip">{{ . }}</span>
+          {{ end }}
         </div>
       </article>
+    {{ else }}
+      <p>No posts yet. Your first blog post will appear here.</p>
     {{ end }}
   </div>
 

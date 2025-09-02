@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="tt-container">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="tt-cta" style="margin:12px 0">{{ . }}</div>{{ end }}
+
+  <div class="tt-grid cols-3" style="margin-top:18px">
+    {{ range .Paginator.Pages }}
+      <article class="tt-card">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Summary | plainify | truncate 140 }}</p>
+        <div style="margin-top:10px">
+          {{ range first 2 .Params.tags }}
+            <span class="tt-chip">{{ . }}</span>
+          {{ end }}
+        </div>
+      </article>
+    {{ end }}
+  </div>
+
+  {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}
