@@ -1,7 +1,8 @@
 baseURL: "https://www.tooltoro.com/"
 languageCode: "en-us"
 title: "ToolToro — Simple AI tools, explained fast."
-# no theme: we ship our own layouts
+# no theme – we use custom layouts
+
 pagination: { pagerSize: 10 }
 
 enableRobotsTXT: true
