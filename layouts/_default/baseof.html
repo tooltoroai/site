@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ with .Title }}{{ . }} — {{ end }}ToolToro</title>
+  {{ with .Param "description" }}<meta name="description" content="{{ . }}">{{ end }}
+  <meta property="og:title" content="{{ .Title }}">
+  {{ with .Param "description" }}<meta property="og:description" content="{{ . }}">{{ end }}
+  <meta property="og:image" content="{{ (resources.Get "images/og-default.jpg") | default (printf "%simages/og-default.jpg" .Site.BaseURL) }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {{ partial "extend_head.html" . }}
+  <style>
+    .tt-topbar{border-bottom:1px solid #eee;background:#fff}
+    .tt-topbar .inner{max-width:1120px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+    .tt-nav a{margin-left:16px;color:var(--tt-ink-70)}
+    .tt-nav a:hover{color:var(--tt-brick)}
+    .logo a{font-family:"Playfair Display",serif;font-weight:700;color:var(--tt-ink);font-size:20px}
+  </style>
+</head>
+<body>
+  <header class="tt-topbar">
+    <div class="inner">
+      <div class="logo"><a href="/">ToolToro</a></div>
+      <nav class="tt-nav">
+        {{ range .Site.Menus.main }}
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+  {{ partial "extend_footer.html" . }}
+</body>
+</html>
