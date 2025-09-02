@@ -1,16 +1,17 @@
 baseURL: "https://www.tooltoro.com/"
 languageCode: "en-us"
 title: "ToolToro — Simple AI tools, explained fast."
-# no theme – we use custom layouts
 
-pagination: { pagerSize: 10 }
+pagination:
+  pagerSize: 10
 
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-outputs: { home: ["HTML","RSS"] }
+outputs:
+  home: ["HTML", "RSS"]
 
 markup:
   goldmark:
@@ -26,13 +27,26 @@ params:
   ShowPostNavLinks: true
   ShowToc: true
   TocOpen: false
-  images: ["images/og-default.jpg"]
-  mainSections = ["blog"]
+  images:
+    - "images/og-default.jpg"
+  # make sure the homepage and /blog list use the blog section
+  mainSections:
+    - "blog"
 
 menu:
   main:
-    - { name: "Start Here", url: "/start/",     weight: 1 }
-    - { name: "Blog",       url: "/blog/",      weight: 2 }
-    - { name: "Tools",      url: "/tools/",     weight: 3 }
-    - { name: "Prompts",    url: "/prompts/",   weight: 4 }
-    - { name: "Disclosure", url: "/disclosure/",weight: 99 }
+    - name: "Start Here"
+      url: "/start/"
+      weight: 1
+    - name: "Blog"
+      url: "/blog/"
+      weight: 2
+    - name: "Tools"
+      url: "/tools/"
+      weight: 3
+    - name: "Prompts"
+      url: "/prompts/"
+      weight: 4
+    - name: "Disclosure"
+      url: "/disclosure/"
+      weight: 99
